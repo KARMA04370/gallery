@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .box {
+            width: 80vw;
+            max-width: 500px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            opacity: 0; /* Start hidden */
+            animation: fadeInColorChange 3s infinite; /* Combined effect */
+        }
+
+        h2 a {
+            color: inherit; /* Inherit color from h2 */
+            text-decoration: none; /* Remove underline */
+        }
+
+        @keyframes fadeInColorChange {
+            0% {
+                opacity: 0; /* Fully transparent */
+                color: #ff5733; /* Starting color */
+            }
+            50% {
+                opacity: 1; /* Fully visible */
+                color: #33c1ff; /* Middle color */
+            }
+            100% {
+                opacity: 1; /* Remain fully visible */
+                color: #ff33f6; /* Ending color */
+            }
+        }
+
+        /* Optional: Add a slight delay for each h2 */
+        .box:nth-child(1) h2 {
+            animation-delay: 0.2s;
+        }
+        .box:nth-child(2) h2 {
+            animation-delay: 0.4s;
+        }
+        .box:nth-child(3) h2 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2><a href="./gallery1/index.html" target="_blank">GALLERY 1</a></h2>
+        </div>
+        <div class="box">
+            <h2><a href="./gallery2/index.html" target="_blank">GALLERY 2</a></h2>
+        </div>
+        <div class="box">
+            <h2><a href="./gallery3/index.html" target="_blank">GALLERY 3</a></h2>
+        </div>
+    </div>
+</body>
+</html>
